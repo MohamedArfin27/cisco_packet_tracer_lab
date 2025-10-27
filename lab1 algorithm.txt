@@ -1,0 +1,49 @@
+Aim:
+connecting laptop with router and configuring the fastethernet connection and pinging pc1 to pc2
+
+Lab1 Alogrithm
+
+step1 : open cisco packet tracer
+
+step2: drag 3 laptop and one router (Model No:2811)
+
+step3 : connect lap 1 with router using automatic connecting wire ( orange thunder symbol)
+
+step 4 : and connect laptop 2 with above method
+
+step5: connect laptop 3 with console cable ( sky blue color cable) connect the cable from router console port to lap 3 rs232 port
+
+step 6 : set ip to pc1 and pc2  click on pc icon and move to desktop option under static set ip , subnetmask , default gateway
+
+step7 : click on lap 3 and move to desktop and then click terminal type no now you will enter router mode
+
+step 8 :Now follow below steps
+          
+        Router Initial Configuration
+=============================
+
+R1
+--------
+Router>enable 
+Router#
+Router#configure terminal 
+Router(config)#interface fastEthernet 0/0
+Router(config-if)#ip address 10.0.0.1 255.0.0.0
+Router(config-if)#no shutdown
+Router(config-if)#exit
+Router(config)#exit
+
+Router#show ip interface brief 
+
+Router#configure terminal 
+Router(config)#interface fastEthernet 0/1
+Router(config-if)#ip address 20.0.0.1 255.0.0.0
+Router(config-if)#no shutdown
+Router(config-if)#exit
+Router(config)#exit
+
+Router#show ip interface brief 
+
+Router#show ip route
+
+step 9: enter into pc1 cmd and ping pc2 ip address
